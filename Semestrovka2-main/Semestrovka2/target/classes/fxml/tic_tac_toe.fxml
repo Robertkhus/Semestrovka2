@@ -1,0 +1,32 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.TextArea?>
+<VBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.semestrovka2.controllers.TicTacToeController"
+      stylesheets="@../css/styles.css"
+      styleClass="root">
+
+    <!-- Центрирование доски -->
+    <StackPane styleClass="game-container">
+        <Canvas fx:id="gameCanvas" width="600" height="600" styleClass="canvas"/>
+    </StackPane>
+
+    <HBox styleClass="control-panel">
+        <!-- Таймер -->
+        <VBox styleClass="timer-box" alignment="CENTER_LEFT">
+            <Label text="Осталось времени:" styleClass="label"/>
+            <Label fx:id="timerLabel" styleClass="timer-label"/>
+        </VBox>
+
+        <!-- Логирование-->
+        <VBox styleClass="log-box" alignment="TOP_LEFT" spacing="10">
+            <Label text="История игр:" styleClass="label" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="logArea" styleClass="log-area" editable="false" wrapText="true"/>
+        </VBox>
+    </HBox>
+
+</VBox>
